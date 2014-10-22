@@ -7,11 +7,11 @@ Original description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Reco
 
 Step 1: To merge the train and test datasets to create one new dataset, e.g.,
 
-train/X_train.txt with test/X_test.txt ==> the result is a 10299 x 561 data frame, as in the original description ("Number of Instances: 10299" and "Number of Attributes: 561")
+train/X_train.txt with test/X_test.txt ==> X_data: the result is a 10299 x 561 data frame
 
-train/subject_train.txt with test/subject_test.txt ==> the result is a 10299 x 1 data frame with subject IDs,
+train/subject_train.txt with test/subject_test.txt ==> subject_data: the result is a 10299 x 1 data frame with subject IDs,
 
-train/y_train.txt with test/y_test.txt ==> the result is also a 10299 x 1 data frame with activity IDs.
+train/y_train.txt with test/y_test.txt ==> y_data: the result is also a 10299 x 1 data frame with activity IDs.
 
 
 Step 2: To read the file features.txt and extract only the measurements on the mean and standard deviation for each measurement.
@@ -36,7 +36,7 @@ f) laying
 Step 4: To label the dataset accordingly using the script with appropriate descriptive names: all feature names (attributes) and activity names are converted to lower case, underscores and brackets () are removed.
 
 
-Step 5: To merge the 10299x66 data frame containing features with 10299x1 data frames containing activity labels and subject IDs. The result is saved as merged_clean_data.txt, which is a 10299x6 data frame containing the first column with subject IDs, the second column with activity names, and the last 66 columns are for measurements. Subject IDs are integers between 1 and 30 inclusive. Names of the attributes are similar to the following:
+Step 5: To merge the 10299x66 data frame containing features with 10299 x 1 data frames containing activity labels and subject IDs. The result is saved as "merged_tidy_data.txt", which is a 10299 x 6 data frame containing the first column with subject IDs, the second column with activity names, and the last 66 columns are for measurements. Subject IDs are integers between 1 and 30 inclusive. Names of the attributes are similar to the following:
 
 tbodyacc-mean-x
 
