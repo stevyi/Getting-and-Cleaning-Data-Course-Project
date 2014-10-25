@@ -23,7 +23,7 @@ into a local folder on your computer, e.g., C:\Users\yourname\Documents\Getting-
 
   e) From the data set in d) above, creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
 
-5) Run RStudio and configure the working directory as setwd("C:\\Users\\yourname\\Documents\\Getting-and-Cleaning-Data\\UCI HAR Dataset\\") and source("run_analysis.R")
+5) Run RStudio. In the RStudio console, configure the working directory as <setwd("C:\\Users\\yourname\\Documents\\Getting-and-Cleaning-Data\\UCI HAR Dataset\\")> and run the command <source("run_analysis.R")>
 
 6) Run the R script. It will read the dataset and write these files:
 
