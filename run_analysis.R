@@ -12,17 +12,20 @@ require("data.table")
 require("reshape2")
 
 # Step 1: To merge the train and test datasets to create a new dataset
+# X_data (data): 7352 * 561
 train_data <- read.table("train/X_train.txt") 
 test_data <- read.table("test/X_test.txt")
 X_data <- rbind(train_data,test_data)
 
-train_data <- read.table("train/subject_train.txt")
-test_data <- read.table("test/subject_test.txt")
-subject_data <- rbind(train_data,test_data)
-
+# y_data (label): 2947 * 561
 train_data <- read.table("train/y_train.txt")
 test_data <- read.table("test/y_test.txt")
 y_data <- rbind(train_data,test_data)
+
+# subject_data (subject): 10299 * 561
+train_data <- read.table("train/subject_train.txt")
+test_data <- read.table("test/subject_test.txt")
+subject_data <- rbind(train_data,test_data)
 
 # Step 2: To read the file features.txt and extract only the measurements on the mean and standard deviation for each measurement
 # Load column names into data
