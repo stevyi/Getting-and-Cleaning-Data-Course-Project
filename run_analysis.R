@@ -15,6 +15,7 @@ test_data <- read.table("test/y_test.txt")
 y_data <- rbind(train_data,test_data)
 
 # Step 2: To read the file features.txt and extract only the measurements on the mean and standard deviation for each measurement
+# Load column names into data
 features <- read.table("features.txt")
 ind <- grep("-mean\\(\\)|-std\\(\\)",features[,2])
 X_data <- X_data[,ind]
@@ -25,12 +26,14 @@ names(X_data) <- gsub("\\(|\\)","",names(X_data))
 names(X_data) <- tolower(names(X_data))
 
 # Step 3: To Read activity_labels.txt and apply the descriptive activity names to name the activities in the dataset
+# Load activity
 activities <- read.table("activity_labels.txt")
 activities[, 2] = gsub("_", "", tolower(as.character(activities[, 2])))
 y_data[,1] = activities[y_data[,1], 2]
 names(y_data) <- "activity"
 
 # Step 4: To label the dataset accordingly using the script with appropriate descriptive names: all feature names (attributes) and activity names are converted to lower case, underscores and brackets () are removed
+# Load subject
 names(subject_data) <- "subject"
 tidy_data <- cbind(subject_data, y_data, X_data)
 write.table(tidy_data, "merged_tidy_data.txt")
