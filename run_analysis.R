@@ -43,14 +43,14 @@ cols <- dim(tidy_data)[2]
 result <- tidy_data[1:(length_subjects * length_activities),]
 
 # Step 6: To create a 2nd independent tidy data set with the average of each measurement for each activity and each subject
-row <- 1
+currentActivity <- 1
 for (subject in 1:length_subjects) {
   for (activity in 1:length_activities) {
-    result[row,1] <- unique_subjects[subject]
-    result[row,2] <- activities[activity,2]
+    result[currentActivity,1] <- unique_subjects[subject]
+    result[currentActivity,2] <- activities[activity,2]
     temp <- tidy_data[tidy_data$subject == subject & tidy_data$activity == activities[activity,2],]
-    result[row,3:cols] <- colMeans(temp[,3:cols]) # column sums and average for numeric arrays
-    row <- row + 1
+    result[currentActivity,3:cols] <- colMeans(temp[,3:cols]) # column sums and average for numeric arrays
+    currentActivity <- currentActivity + 1
     }
   }
 # write result to the file "dataset_averages.txt"
