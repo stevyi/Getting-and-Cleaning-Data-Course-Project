@@ -1,5 +1,15 @@
 # Data source for this project: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 # This "run_analysis.R" perform the following:
+if(!require("data.table")){
+install.packages("data.table")
+}
+
+if(!require("reshape2")){
+install.packages("reshape2")
+}
+
+require("data.table")
+require("reshape2")
 
 # Step 1: To merge the train and test datasets to create a new dataset
 train_data <- read.table("train/X_train.txt") 
