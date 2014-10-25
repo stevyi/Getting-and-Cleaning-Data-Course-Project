@@ -68,6 +68,5 @@ for (subject in 1:length_subjects) {
     result[currentActivity,3:cols] <- colMeans(temp[,3:cols]) # column sums and average for numeric arrays
     currentActivity <- currentActivity + 1
     }
-  }
 # write result to the file "dataset_averages.txt"
-write.table(result,"dataset_averages.txt")
+write.table(result,"dataset_averages.txt",row.names=FALSE)
