@@ -7,9 +7,9 @@ Getting and Cleaning DATA COURSE Project
 
 into a local folder on your computer, e.g., C:\Users\yourname\Documents\Getting-and-Cleaning-Data\
 
-2) Unzip the file into the sub-folder created, e.g., C:\Users\yourname\Documents\Getting-and-Cleaning-Data\UCI HAR Dataset 
+2) Unzip the file into the local folder created, e.g., C:\Users\yourname\Documents\Getting-and-Cleaning-Data\UCI HAR Dataset 
 
-3) Write a R script "run_analysis.R" in the sub-folder, e.g., C:\Users\yourname\Documents\Getting-and-Cleaning-Data\UCI HAR Dataset\
+3) Write a R script "run_analysis.R" in the sub-folder created, e.g., C:\Users\yourname\Documents\Getting-and-Cleaning-Data\UCI HAR Dataset\
 
 4) The R script "run_analysis.R" should do the following:
 
