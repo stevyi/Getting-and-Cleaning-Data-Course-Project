@@ -38,12 +38,19 @@ STEP 4: To label the dataset accordingly using the script with appropriate descr
 STEP 5: To merge the 10299x66 data frame containing features with 10299 x 1 data frames containing activity labels and subject IDs. The result is saved as "merged_tidy_data.txt", which is a 10299 x 6 data frame containing the first column with subject IDs, the second column with activity names, and the last 66 columns are for measurements. Subject IDs are integers between 1 and 30 inclusive. Names of the attributes are similar to the following:
 
   (a) tbodyacc-mean-x
+  
   (b) tbodyacc-mean-y
+  
   (c) tbodyacc-mean-z
+  
   (d) tbodyacc-std-x
+ 
   (e) tbodyacc-std-y
+  
   (f) tbodyacc-std-z
+
   (g) tgravityacc-mean-x
+ 
   (h) tgravityacc-mean-y
 
 STEP 6: To create a 2nd independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as "dataset_averages.txt", a 180x68 data frame with the first column contains subject IDs, the second column contains activity names and the last columns for measurements. The averages for each of the 66 attributes are in columns 3...68. There are total 30 subjects and 6 activities contributing to 180 rows of averages in this dataset.
