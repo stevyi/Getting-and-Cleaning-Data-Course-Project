@@ -41,8 +41,8 @@ names(X_data) <- tolower(names(X_data))
 # Step 3: To Read activity_labels.txt and apply the descriptive activity names to name the activities in the dataset
 # Load activity
 activities <- read.table("activity_labels.txt")
-activities[, 2] = gsub("_", "", tolower(as.character(activities[, 2])))
-y_data[,1] = activities[y_data[,1], 2]
+activities[, 2] <- gsub("_", "", tolower(as.character(activities[, 2])))
+y_data[,1] <- activities[y_data[,1], 2]
 names(y_data) <- "activity"
 
 # Step 4: To label the dataset accordingly using the script with appropriate descriptive names: all feature names (attributes) and activity names are converted to lower case, underscores and brackets () are removed
