@@ -13,23 +13,23 @@ require("reshape2")
 
 # Step 1: To merge the train and test datasets to create a new dataset
 # X_data (data): 7352 * 561
-train_data <- read.table("train/X_train.txt") 
-test_data <- read.table("test/X_test.txt")
+train_data <- fread("train/X_train.txt") 
+test_data <- fread("test/X_test.txt")
 X_data <- rbind(train_data,test_data)
 
 # y_data (label): 2947 * 561
-train_data <- read.table("train/y_train.txt")
-test_data <- read.table("test/y_test.txt")
+train_data <- fread("train/y_train.txt")
+test_data <- fread("test/y_test.txt")
 y_data <- rbind(train_data,test_data)
 
 # subject_data (subject): 10299 * 561
-train_data <- read.table("train/subject_train.txt")
-test_data <- read.table("test/subject_test.txt")
+train_data <- fread("train/subject_train.txt")
+test_data <- fread("test/subject_test.txt")
 subject_data <- rbind(train_data,test_data)
 
 # Step 2: To read the file features.txt and extract only the measurements on the mean and standard deviation for each measurement
 # Load column names into data
-features <- read.table("features.txt")
+features <- fread("features.txt")
 ind <- grep("-mean\\(\\)|-std\\(\\)",features[,2])
 X_data <- X_data[,ind]
 names(X_data) <- features[ind,2]
@@ -40,7 +40,7 @@ names(X_data) <- tolower(names(X_data))
 
 # Step 3: To Read activity_labels.txt and apply the descriptive activity names to name the activities in the dataset
 # Load activity
-activities <- read.table("activity_labels.txt")
+activities <- fread("activity_labels.txt")
 activities[, 2] <- gsub("_", "", tolower(as.character(activities[, 2])))
 y_data[,1] <- activities[y_data[,1], 2]
 names(y_data) <- "activity"
