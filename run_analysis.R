@@ -64,7 +64,9 @@ for (subject in 1:length_subjects) {
   for (activity in 1:length_activities) {
     result[currentActivity,1] <- unique_subjects[subject]
     result[currentActivity,2] <- activities[activity,2]
-    temp <- tidy_data[tidy_data$subject == subject & tidy_data$activity == activities[activity,2],]
+    temp_subj <- tidy_data$subject == subject
+    temp_activity <- tidy_data$activity == activities[activity,2]
+    temp <- tidy_data[(temp_subj & temp_activity),]
     result[currentActivity,3:cols] <- colMeans(temp[,3:cols]) # column sums and average for numeric arrays
     currentActivity <- currentActivity + 1
     }
